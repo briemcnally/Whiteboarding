@@ -4,6 +4,7 @@
 # Solve it both iteratively and recursively.
 
 #iterative
+# time complexity O(n) where n is num
 def fibs(num)
   return [] if num == 0
   return [0] if num == 1
@@ -17,7 +18,8 @@ def fibs(num)
 end
 
 #recursive
-
+#time complexity is 0(n) where n is num
+#space complexity is O(n) since we have O(n) frames on the call stack 
 def fibs(sum)
   return [] if num == 0
   return [0] if num == 1
