@@ -55,7 +55,7 @@ ROMAN = {
   "M" => 1000
 }
 
-def roman_to_int(s)
+def int_to_roman(s)
   new = s.split("")
   i = 0
   num = 0
