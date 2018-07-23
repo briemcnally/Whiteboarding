@@ -73,4 +73,45 @@ end
 # for each element of array1 the innerloops goes through b iterations
 #where b = array2.length
 # runtime is o(ab) where a = array1.lngth
-# not 0(n **2) because they are two different inputs 
+# not 0(n **2) because they are two different inputs
+
+def reverse(array)
+  i = 0
+  while i < (array.length / 2)
+    other = array.length - i - 1
+    temp = array[i]
+    array[i] = array[other]
+    array[other] = temp
+    i += 1
+  end
+  array
+end
+#0(N) runtime
+# the fact that it only goes through half of the array in terms of iterations doesn't
+#impact the big O time
+
+
+#Which of the following are equivalent to 0(N) and Why?
+#O(N + P), where P < N/2
+  #Here N is the dominant term so we can drop the O(P)
+#O(2N)
+  #We drop constants so this is just 0(N)
+#0(N + log N)
+  # O(N) dominants O(logN) so we can drop that
+# O(N + M)
+  # there is no extablished relationship between N and M so have to keep
+  # both variables and this is not the same as O(N)
+
+
+#Example 8
+#What is the runtim of an algorithm that takes and array of strings
+#sorts each string and then sorted the full array
+  # s is the length of the longest string
+  # a is the length of the array
+  # sorting eahc string is O(s log s)
+  # We do this for every string so thats O(a*s log s)
+  # Now we have to sort all the strings
+    # each string comparison takes O(s) and there are O( a log a) comparisons
+    # so this wil take O(a *s log a) time
+  # when you add these two parts you get
+    # O(a * s(log a + log s))
