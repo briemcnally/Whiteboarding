@@ -54,3 +54,23 @@ end
 # the code iterates through each pair of values for (i, j) where j is bigger than i
 #There are N**2 total pairs and roughly half of those with have i < j and the
 #remaining will have i > j which is roughly (N**2)/2 or O(n**2)
+
+
+def print_unordered_pairs(array1, array2)
+  i = 0
+  while i < array1.length
+    j = 0
+    while j < array2.length
+      if array1[i] < array2[j]
+        puts "#{array1[i]} , #{array2[j]} "
+      end
+      j+= 1
+    end
+    i+= 1
+  end
+end
+# the if statement in the j's loop is 0(1) time bc it is just a sequence of constant time statements
+# for each element of array1 the innerloops goes through b iterations
+#where b = array2.length
+# runtime is o(ab) where a = array1.lngth
+# not 0(n **2) because they are two different inputs 
